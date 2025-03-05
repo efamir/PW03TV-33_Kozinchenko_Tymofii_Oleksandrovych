@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор прибутку</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #444;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        span {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+
+        /* Додаємо футер із інформацією про студента */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+    <script src="practice3.js" defer></script>
+</head>
+<body>
+<label for="avg-power">Середньодобова потужність (МВт)</label>
+<input type="number" id="avg-power"><br/>
+
+<label for="electricity-cost">Вартість електроенергії (грн/кВт*год)</label>
+<input type="number" id="electricity-cost"><br/>
+
+<label>Середньоквадратичне відхилення:</label><br/>
+<label for="std-dev-before">До покращення</label>
+<input type="number" id="std-dev-before"><br/>
+
+<label for="std-dev-after">Після покращення</label>
+<input type="number" id="std-dev-after"><br/>
+
+<button onclick="calculate()">Підрахувати</button>
+<h1>Результати</h1>
+<p>
+    Прибуток до покращення, тис. грн: <span id="profit_before"></span>
+</p>
+<p>
+    Прибуток після покращення, тис. грн: <span id="profit_after"></span>
+</p>
+<p>
+    Різниця прибутків, тис. грн: <span id="profit_difference"></span>
+</p>
+<footer>
+    Виконав студент групи ТВ-33 Козінченко Тимофій. Практична робота 3.
+</footer>
+</body>
+</html>
